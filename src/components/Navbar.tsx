@@ -43,14 +43,14 @@ export default function Navbar() {
               onClick={() => setIsSelected(item.path)}
             >
               <div
-                className={`w-2 h-2 bg-primary rounded-full transition-all duration-200 ${
+                className={`w-2 h-2 bg-gray rounded-full transition-all duration-200 ${
                   isSelected === item.path
-                    ? "opacity-100 scale-100"
-                    : "opacity-0 scale-50"
+                    ? "opacity-100 scale-100 bg-primary"
+                    : "opacity-100 lg:opacity-0 lg:scale-50"
                 }}`}
               />
               <span
-                className={`text-base font-semibold transition-colors duration-200 ${
+                className={`hidden lg:block text-base font-semibold transition-colors duration-200 ${
                   isSelected === item.path ? "text-primary" : "text-gray"
                 }`}
               >

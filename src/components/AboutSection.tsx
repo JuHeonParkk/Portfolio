@@ -1,9 +1,16 @@
-import ProfileImage from "@/assets/profile.jpg";
+import AbilitySection from "./AbilitySection";
+import ProfileSection from "./ProfileSection";
+import SkillsSection from "./SkillSection";
 
 export default function AboutSection() {
   return (
-    <div>
-      <img src={ProfileImage} alt="박주헌 프로필" />
-    </div>
+    <section
+      id="about"
+      className="w-full min-h-screen flex flex-col items-center justify-center"
+    >
+      <ProfileSection />
+      <AbilitySection />
+      <SkillsSection />
+    </section>
   );
 }
