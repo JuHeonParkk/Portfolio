@@ -37,7 +37,7 @@ export default function AbilitySection() {
     },
   ];
   return (
-    <section>
+    <section className="w-full min-h-screen">
       <Title
         subTitle="STRENGTH"
         title="핵심 성과"

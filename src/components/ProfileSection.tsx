@@ -77,20 +77,12 @@ export default function ProfileSection() {
         <p className="leading-8 text-base md:text-lg">
           사용자 경험을 중심으로 배우고 성장하는 신입 프론트엔드 개발자
           박주헌입니다.
-          <br /> 대학에서 처음 웹 페이지를 구현하며{" "}
-          <span className="text-primary font-semibold">
-            작성한 코드대로 화면이 바뀌는 것
-          </span>
-          에 매력을 느껴 프론트엔드 개발자의 길을 선택하게 되었습니다.
+          <br /> 대학에서 처음 웹 페이지를 구현하며 작성한 코드대로 화면이
+          바뀌는 것 에 매력을 느껴 프론트엔드 개발자의 길을 선택하게 되었습니다.
           <br />
-          <span className="text-primary font-semibold">React</span>와{" "}
-          <span className="text-primary font-semibold">TypeScript</span>를
-          기반으로 다양한 프로젝트를 진행하며 유지보수성과 확장성을 고려한
-          개발을 경험했고, 현재는{" "}
-          <span className="text-primary font-semibold">
-            Next.js와 서버 연동 기술
-          </span>
-          까지 학습하며 기술 스택을 넓혀가고 있습니다. 사용자에게 더 나은 경험을
+          React와TypeScript를 기반으로 다양한 프로젝트를 진행하며 유지보수성과
+          확장성을 고려한 개발을 경험했고, 현재는 Next.js와 서버 연동 기술 까지
+          학습하며 기술 스택을 넓혀가고 있습니다. 사용자에게 더 나은 경험을
           제공하는 것이 좋은 서비스의 시작이라고 생각하며, 새로운 기술을
           적극적으로 배우고 프로젝트에 적용하면서 꾸준히 성장하는 개발자를
           목표로 하고 있습니다.

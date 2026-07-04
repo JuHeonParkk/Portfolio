@@ -169,7 +169,7 @@ export default function SkillsSection() {
   );
 
   return (
-    <section className="w-full">
+    <section className="w-full min-h-screen">
       <div className="mx-auto max-w-6xl">
         <Title
           subTitle="TECH STACK"
