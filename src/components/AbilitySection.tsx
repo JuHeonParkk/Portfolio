@@ -3,7 +3,7 @@ import Title from "./Title";
 interface AbilityItems {
   id: number;
   title: string;
-  content: string;
+  content: string[];
 }
 
 export default function AbilitySection() {
@@ -11,39 +11,56 @@ export default function AbilitySection() {
     {
       id: 1,
       title: "💻 기술 스택 확장 및 유지보수성",
-      content:
-        "• React · Next.js · TypeScript\n• TanStack Query · React Hook Form\n• 기능 단위 폴더 구조 설계\n• 공통 컴포넌트 기반 재사용성 향상",
+      content: [
+        "React · Next.js· JavaScript · TypeScript 기반 프로젝트 개발 경험",
+        "TanStack Query · React Hook Form 등 다양한 라이브러리 학습 및 적용",
+        "공통 컴포넌트와 기능 단위 구조 설계로 재사용성과 유지보수성 향상",
+      ],
     },
     {
       id: 2,
       title: "🎨 사용자 경험 중심의 UI/UX",
-      content:
-        "• 직관적이고 접근성 높은 UI 구현\n• 사용자 이동 경로 분석\n• UI/UX 트렌드 학습\n• 사용성을 고려한 인터페이스 설계",
+      content: [
+        "사용자 관점에서 직관적이고 접근성 높은 UI 구현",
+        "UI/UX 트렌드를 꾸준히 학습하고 프로젝트에 반영",
+        "사용자 이동 경로를 고려한 인터페이스 설계 경험",
+      ],
     },
     {
       id: 3,
       title: "🤝 협업과 문제 해결",
-      content:
-        "• 적극적인 의견 제안\n• 코드 리뷰 및 리팩토링\n• 구조 개선을 통한 품질 향상\n• 원활한 팀 커뮤니케이션",
+      content: [
+        "팀 프로젝트에서 적극적인 의견 제안과 원활한 커뮤니케이션",
+        "코드 리뷰와 리팩토링을 통해 코드 품질 개선",
+        "새로운 기술을 빠르게 학습하고 프로젝트에 적용하며 지속적으로 성장",
+      ],
     },
   ];
   return (
-    <section className="w-full flex flex-col items-center justify-center">
+    <section>
       <Title
         subTitle="STRENGTH"
         title="핵심 성과"
         description="사용자 경험과 유지보수성을 고려하며 프로젝트를 진행했습니다."
       />
-      <ul className="flex flex-col justify-center lg:grid lg:grid-cols-3 gap-5">
+      <ul className="grid grid-cols-1 md:grid-cols-3 gap-5">
         {AbilityList.map((item) => (
           <li
             key={item.id}
             className="flex-1 rounded-2xl border border-gray-200 p-8 transition-all duration-300 hover:-translate-y-2 hover:border-primary/30 hover:shadow-xl"
           >
             <p className="text- font-semibold mb-4">{item.title}</p>
-            <p className="text-base leading-7 text-gray whitespace-pre-line">
-              {item.content}
-            </p>
+            <ul className="space-y-3">
+              {item.content.map((content) => (
+                <li
+                  key={content}
+                  className="flex items-start gap-2 text-gray-600"
+                >
+                  <span className="mt-2 h-1 w-1 rounded-full bg-primary shrink-0" />
+                  <span>{content}</span>
+                </li>
+              ))}
+            </ul>
           </li>
         ))}
       </ul>
