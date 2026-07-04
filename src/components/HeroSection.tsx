@@ -5,7 +5,7 @@ export default function HeroSection() {
       className="flex min-h-screen flex-col items-center justify-center text-center"
     >
       <p className="mb-4 text-2xl text-gray">
-        <span className="inline-block origin-[70%_70%] animate-wave mr-1">
+        <span className="inline-block origin-[70%_70%] animate-wave mr-1 text-3xl">
           👋
         </span>
         안녕하세요.
