@@ -51,7 +51,7 @@ export default function Navbar() {
               />
               <span
                 className={`text-base font-semibold transition-colors duration-200 ${
-                  isSelected === item.path ? "text-primary" : "text-gray-200"
+                  isSelected === item.path ? "text-primary" : "text-gray"
                 }`}
               >
                 {item.title}
