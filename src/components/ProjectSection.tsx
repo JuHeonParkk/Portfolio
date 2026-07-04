@@ -21,19 +21,24 @@ export default function ProjectSection() {
             key={project.id}
             type="button"
             onClick={() => setSelectedProject(project)}
-            className="overflow-hidden border border-gray-200 rounded-2xl transition relative hover:-translate-y-2 hover:shadow-xl hover:border-primary"
+            className="overflow-hidden border border-gray-200 rounded-2xl transition relative hover:-translate-y-2 hover:shadow-lg hover:shadow-teal-100"
           >
             <img
               src={project.thumbnail}
               alt="이미지 썸네일"
-              className="h-60 w-full object-cover transition duration-500 hover:scale-105"
+              className="h-60 w-full object-cover"
             />
             <div className="p-6 flex flex-col items-start justify-center">
-              <h3 className="text-2xl font-bold">{project.title}</h3>
-              <p className="mt-3 text-sm text-gray text-start">
+              <div className="w-full flex items-center justify-between">
+                <h3 className="text-xl font-semibold">{project.title}</h3>
+                <span className="text-sm font-medium text-gray">
+                  {project.period}
+                </span>
+              </div>
+              <p className="mt-2 text-sm text-gray text-start">
                 {project.description}
               </p>
-              <div className="flex items-center gap-2 mt-3">
+              <div className="flex items-center gap-2 mt-5">
                 {project.techStack.map((tech) => (
                   <img
                     key={tech.name}
