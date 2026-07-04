@@ -33,24 +33,22 @@ export default function Navbar() {
   const [isSelected, setIsSelected] = useState("#home");
 
   return (
-    <div className="fixed top-1/2 right-14 -translate-y-1/2">
-      <ul className="w-full h-full flex flex-col items-end justify-between gap-6">
+    <div className="fixed top-5 left-1/2 -translate-x-1/2 z-10">
+      <ul className="px-6 py-4  flex items-center justify-between gap-8 md:px-14 md:py-5 md:gap-12 bg-secondary rounded-2xl">
         {navItems.map((item) => (
           <li key={item.id}>
             <a
               href={item.path}
-              className="flex items-center justify-center gap-2 transition-all duration-200 ease-out hover:-translate-x-1"
+              className="flex items-center justify-center gap-2 transition-all duration-200 ease-out hover:-translate-y-0.5"
               onClick={() => setIsSelected(item.path)}
             >
               <div
-                className={`w-2 h-2 bg-gray rounded-full transition-all duration-200 ${
-                  isSelected === item.path
-                    ? "opacity-100 scale-100 bg-primary"
-                    : "opacity-100 lg:opacity-0 lg:scale-50"
-                }}`}
+                className={`w-1.5 h-1.5 rounded-full transition-all duration-300 ${
+                  isSelected === item.path ? "bg-primary" : "bg-gray-400"
+                }`}
               />
               <span
-                className={`hidden lg:block text-base font-semibold transition-colors duration-200 ${
+                className={`text-sm md:text-base font-semibold transition-colors duration-200 ${
                   isSelected === item.path ? "text-primary" : "text-gray"
                 }`}
               >

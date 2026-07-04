@@ -4,9 +4,9 @@ export default function ProfileSection() {
   return (
     <section
       id="about"
-      className="w-full min-h-screen flex items-center justify-center"
+      className="w-full min-h-screen flex items-center justify-center py-24"
     >
-      <div className="flex items-center gap-20">
+      <div className="flex flex-col lg:flex-row items-center gap-20">
         <img
           src={ProfileImage}
           alt="박주헌 프로필"
