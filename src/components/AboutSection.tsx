@@ -1,6 +1,5 @@
 import AbilitySection from "./AbilitySection";
 import ProfileSection from "./ProfileSection";
-import SkillsSection from "./SkillSection";
 
 export default function AboutSection() {
   return (
@@ -10,7 +9,6 @@ export default function AboutSection() {
     >
       <ProfileSection />
       <AbilitySection />
-      <SkillsSection />
     </section>
   );
 }

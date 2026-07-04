@@ -169,7 +169,10 @@ export default function SkillsSection() {
   );
 
   return (
-    <section className="w-full min-h-screen">
+    <section
+      id="skills"
+      className="w-full min-h-screen flex flex-col items-center justify-center gap-24 px-6"
+    >
       <div className="mx-auto max-w-6xl">
         <Title
           subTitle="TECH STACK"
