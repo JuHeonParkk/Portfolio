@@ -9,7 +9,7 @@ export default function ProjectSection() {
   );
 
   return (
-    <section id="project" className="w-full min-h-screen py-24 px-6">
+    <section id="project" className="mx-auto max-w-7xl px-8 py-32">
       <Title
         subTitle="PROJECTS"
         title="프로젝트"

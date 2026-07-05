@@ -33,7 +33,7 @@ export default function ProfileSection() {
   ] as const;
 
   return (
-    <section id="about" className="w-full py-24">
+    <section className="mx-auto max-w-7xl px-8 bg-white py-24">
       <div className="flex flex-col md:flex-row items-center gap-20">
         <img
           src={ProfileImage}
@@ -75,8 +75,10 @@ export default function ProfileSection() {
 
       <div className="mt-12">
         <p className="leading-8 text-base md:text-lg">
-          사용자 경험을 중심으로 배우고 성장하는 신입 프론트엔드 개발자
-          박주헌입니다.
+          <strong>
+            사용자 경험을 중심으로 배우고 성장하는 신입 프론트엔드 개발자
+            박주헌입니다.
+          </strong>
           <br /> 대학에서 처음 웹 페이지를 구현하며 작성한 코드대로 화면이
           바뀌는 것 에 매력을 느껴 프론트엔드 개발자의 길을 선택하게 되었습니다.
           <br />

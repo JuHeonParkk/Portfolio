@@ -12,7 +12,9 @@ export default function Title({ subTitle, title, description }: TitleProps) {
       </p>
       <h2 className="text-4xl font-bold text-gray-900">{title}</h2>
       <div className="mx-auto mt-4 h-1 w-14 rounded-full bg-primary" />
-      <p className="mt-5 text-base text-gray-500">{description}</p>
+      <p className="mt-5 text-base text-gray-500 whitespace-pre-line">
+        {description}
+      </p>
     </div>
   );
 }

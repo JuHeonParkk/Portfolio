@@ -8,7 +8,7 @@ import SkillsSection from "./components/SkillSection";
 
 function App() {
   return (
-    <div className="w-full max-w-7xl mx-auto px-8">
+    <div>
       <Navbar />
       <HeroSection />
       <AboutSection />

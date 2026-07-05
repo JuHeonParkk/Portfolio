@@ -1,12 +1,8 @@
-import { useState } from "react";
 import Title from "./Title";
 import { SkillList } from "@/constants/skills";
 import type { SkillCategory } from "@/constants/skills";
 
 export default function SkillsSection() {
-  const [selectedCategory, setSelectedCategory] =
-    useState<SkillCategory>("Frontend");
-
   const categories: SkillCategory[] = [
     "Frontend",
     "Styling",
@@ -15,64 +11,69 @@ export default function SkillsSection() {
     "Tools",
   ];
 
-  const filteredSkills = SkillList.filter(
-    (skill) => skill.category === selectedCategory,
-  );
-
   return (
     <section
       id="skills"
-      className="w-full min-h-screen flex flex-col items-center justify-center gap-24 px-6"
+      className="w-full min-h-screen flex flex-col items-center justify-center py-32 px-6 bg-white"
     >
-      <div className="mx-auto max-w-6xl">
+      <div className="w-full max-w-4xl">
         <Title
           subTitle="TECH STACK"
           title="기술 스택"
-          description="프로젝트에서 사용해 본 기술과 도구입니다."
+          description="프로젝트를 개발하며 활용해 본 기술과 도구들입니다."
         />
 
-        <div className="mb-12 flex flex-wrap justify-center gap-3">
-          {categories.map((category) => (
-            <button
-              key={category}
-              type="button"
-              onClick={() => setSelectedCategory(category)}
-              className={`rounded-full border px-5 py-2.5 text-sm font-semibold transition-all duration-300 ${
-                selectedCategory === category
-                  ? "border-primary bg-primary text-white shadow-md shadow-teal-100"
-                  : "border-gray-200 bg-white text-gray-500 hover:border-primary hover:text-primary"
-              }`}
-            >
-              {category}
-            </button>
-          ))}
+        <div className="mt-20 flex flex-col gap-12">
+          {categories.map((category) => {
+            const currentSkills = SkillList.filter(
+              (skill) => skill.category === category,
+            );
+            if (currentSkills.length === 0) return null;
+
+            return (
+              <div
+                key={category}
+                className="grid grid-cols-1 md:grid-cols-4 gap-6 md:gap-8 border-b border-gray-100 pb-10 last:border-none last:pb-0"
+              >
+                <div className="md:col-span-1">
+                  <div className="md:sticky md:top-28">
+                    <h3 className="text-lg font-bold text-gray-800 tracking-tight">
+                      {category}
+                    </h3>
+                    <p className="text-xs text-gray-400 mt-1 font-medium font-mono">
+                      {currentSkills.length} SKILLS
+                    </p>
+                  </div>
+                </div>
+
+                <div className="md:col-span-3">
+                  <ul className="grid grid-cols-1 sm:grid-cols-2 gap-y-6 gap-x-8">
+                    {currentSkills.map((skill) => (
+                      <li key={skill.name} className="flex items-start gap-4">
+                        <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl border border-gray-100 bg-gray-50/50 p-2">
+                          <img
+                            src={skill.icon}
+                            alt={skill.name}
+                            className="h-full w-full object-contain grayscale-[20%] group-hover:grayscale-0"
+                          />
+                        </div>
+
+                        <div className="space-y-0.5">
+                          <h4 className="text-base font-bold text-gray-900">
+                            {skill.name}
+                          </h4>
+                          <p className="text-sm text-gray-500 leading-relaxed">
+                            {skill.description}
+                          </p>
+                        </div>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+            );
+          })}
         </div>
-
-        <ul className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
-          {filteredSkills.map((skill) => (
-            <li
-              key={skill.name}
-              className="group flex items-center gap-4 rounded-2xl border border-gray-200 bg-white px-5 py-4 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-primary hover:shadow-lg hover:shadow-teal-100"
-            >
-              <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-teal-50 p-2.5 transition-transform duration-300 group-hover:scale-110">
-                <img
-                  src={skill.icon}
-                  alt={skill.name}
-                  className="h-full w-full object-contain"
-                />
-              </div>
-
-              <div>
-                <h3 className="text-lg font-bold text-gray-900">
-                  {skill.name}
-                </h3>
-                <p className="mt-0.5 text-sm text-gray-500">
-                  {skill.description}
-                </p>
-              </div>
-            </li>
-          ))}
-        </ul>
       </div>
     </section>
   );

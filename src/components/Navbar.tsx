@@ -69,7 +69,7 @@ export default function Navbar() {
 
   return (
     <div
-      className={`fixed top-8 left-1/2 -translate-x-1/2 z-10 transition-all duration-300  rounded-2xl ${
+      className={`fixed top-8 left-1/2 -translate-x-1/2 z-50 transition-all duration-300  rounded-2xl ${
         isScrolled
           ? "opacity-90 bg-secondary/70 backdrop-blur-md shadow-lg"
           : "bg-secondary"

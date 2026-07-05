@@ -9,6 +9,7 @@
   --color-gray: #6b7280;
 
   --animate-wave: wave 2s ease-in-out infinite;
+  --animate-marquee: marquee 18s linear infinite;
 
   @keyframes wave {
     0%,
@@ -26,6 +27,16 @@
     }
     80% {
       transform: rotate(6deg);
+    }
+  }
+
+  @keyframes marquee {
+    from {
+      transform: translateX(0);
+    }
+
+    to {
+      transform: translateX(-50%);
     }
   }
 }
