@@ -1,8 +1,8 @@
-import ProfileImage from "@/assets/profile.jpg";
-import EmailIcon from "@/assets/email-icon.svg";
-import PhoneIcon from "@/assets/phone-icon.svg";
-import GithubIcon from "@/assets/github-icon.svg";
-import VelogIcon from "@/assets/velog-icon.svg";
+import ProfileImage from "@/assets/images/profile.jpg";
+import EmailIcon from "@/assets/icons/email-icon.svg";
+import PhoneIcon from "@/assets/icons/phone-icon.svg";
+import GithubIcon from "@/assets/icons/github-icon.svg";
+import VelogIcon from "@/assets/icons/velog-icon.svg";
 
 interface ProfileItem {
   icon: React.ReactElement;
@@ -33,7 +33,7 @@ export default function ProfileSection() {
   ] as const;
 
   return (
-    <section className="mx-auto max-w-7xl px-8 bg-white py-24">
+    <section className="mx-auto max-w-7xl h-full px-8 bg-white py-32">
       <div className="flex flex-col md:flex-row items-center gap-20">
         <img
           src={ProfileImage}
@@ -56,10 +56,13 @@ export default function ProfileSection() {
                     href={item.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center gap-2 underline"
+                    className="flex items-center gap-2 group"
                   >
                     {item.icon}
-                    <span>{item.content}</span>
+                    <span className="underline">{item.content}</span>
+                    <span className="transform group-hover:-translate-y-1 -ml-2">
+                      ↗
+                    </span>
                   </a>
                 ) : (
                   <div key={item.content} className="flex items-center gap-2">
@@ -74,16 +77,16 @@ export default function ProfileSection() {
       </div>
 
       <div className="mt-12">
-        <p className="leading-8 text-base md:text-lg">
+        <p className="leading-8 text-sm md:text-base">
           <strong>
             사용자 경험을 중심으로 배우고 성장하는 신입 프론트엔드 개발자
             박주헌입니다.
           </strong>
           <br /> 대학에서 처음 웹 페이지를 구현하며 작성한 코드대로 화면이
-          바뀌는 것 에 매력을 느껴 프론트엔드 개발자의 길을 선택하게 되었습니다.
+          바뀌는 것에 매력을 느껴 프론트엔드 개발자의 길을 선택하게 되었습니다.
           <br />
-          React와TypeScript를 기반으로 다양한 프로젝트를 진행하며 유지보수성과
-          확장성을 고려한 개발을 경험했고, 현재는 Next.js와 서버 연동 기술 까지
+          React와 TypeScript를 기반으로 다양한 프로젝트를 진행하며 유지보수성과
+          확장성을 고려한 개발을 경험했고, 현재는 Next.js와 서버 연동 기술까지
           학습하며 기술 스택을 넓혀가고 있습니다. 사용자에게 더 나은 경험을
           제공하는 것이 좋은 서비스의 시작이라고 생각하며, 새로운 기술을
           적극적으로 배우고 프로젝트에 적용하면서 꾸준히 성장하는 개발자를

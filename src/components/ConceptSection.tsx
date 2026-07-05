@@ -1,7 +1,7 @@
 import Title from "./Title";
-import PaintIcon from "@/assets/paint-icon.png";
-import HeartIcon from "@/assets/heart-icon.png";
-import TargetIcon from "@/assets/target-icon.png";
+import PaintIcon from "@/assets/images/paint-icon.png";
+import HeartIcon from "@/assets/images/heart-icon.png";
+import TargetIcon from "@/assets/images/target-icon.png";
 
 const conceptItems = [
   { type: "keyword", text: "협업형 개발자", active: false },
@@ -31,7 +31,7 @@ export default function ConceptSection() {
           description={`프로젝트를 함께 진행한 팀원들이 남겨준 피어리뷰를 바탕으로, \n 가장 많이 언급된 키워드를 담았습니다.`}
         />
 
-        <div className="relative mx-auto max-w-3xl">
+        <div className="relative mx-auto max-w-2xl">
           <div className="flex flex-wrap justify-center gap-5">
             {conceptItems.map((item, index) =>
               item.type === "icon" ? (
@@ -39,7 +39,7 @@ export default function ConceptSection() {
                   key={index}
                   src={item.src}
                   alt="키워드 아이콘"
-                  className="w-16 h-16 object-contain self-center"
+                  className="w-16 h-16 object-contain self-center animate-float"
                 />
               ) : (
                 <span

@@ -1,6 +1,6 @@
-import EmailIcon from "@/assets/email-icon.svg";
-import GithubIcon from "@/assets/github-icon.svg";
-import VelogIcon from "@/assets/velog-icon.svg";
+import EmailIcon from "@/assets/icons/email-icon.svg";
+import GithubIcon from "@/assets/icons/github-icon.svg";
+import VelogIcon from "@/assets/icons/velog-icon.svg";
 
 export default function Footer() {
   return (

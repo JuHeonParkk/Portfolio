@@ -1,11 +1,11 @@
 export type SkillCategory =
   | "Frontend"
   | "Styling"
-  | "State Management"
+  | "Development"
   | "Design"
   | "Tools";
 
-interface SkillItem {
+export interface SkillItem {
   name: string;
   description: string;
   category: SkillCategory;
@@ -64,19 +64,19 @@ export const SkillList: SkillItem[] = [
   {
     name: "TanStack Query",
     description: "서버 상태 캐싱 및 동기화",
-    category: "State Management",
+    category: "Development",
     icon: "https://tanstack.com/favicon.ico",
   },
   {
     name: "React Hook Form",
     description: "폼 상태 및 유효성 검증 관리 적용",
-    category: "State Management",
+    category: "Development",
     icon: "https://cdn.simpleicons.org/reacthookform/EC5990",
   },
   {
     name: "Axios",
     description: "API 요청 및 인터셉터 구성",
-    category: "State Management",
+    category: "Development",
     icon: "https://cdn.simpleicons.org/axios/5A29E4",
   },
   {

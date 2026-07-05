@@ -1,12 +1,12 @@
 import Title from "./Title";
-import { SkillList } from "@/constants/skills";
-import type { SkillCategory } from "@/constants/skills";
+import { SkillList } from "@/constants/tech";
+import type { SkillCategory } from "@/constants/tech";
 
 export default function SkillsSection() {
   const categories: SkillCategory[] = [
     "Frontend",
     "Styling",
-    "State Management",
+    "Development",
     "Design",
     "Tools",
   ];
@@ -14,7 +14,7 @@ export default function SkillsSection() {
   return (
     <section
       id="skills"
-      className="w-full min-h-screen flex flex-col items-center justify-center py-32 px-6 bg-white"
+      className="w-full flex flex-col items-center justify-center py-32 bg-gray-50"
     >
       <div className="w-full max-w-4xl">
         <Title
@@ -23,7 +23,7 @@ export default function SkillsSection() {
           description="프로젝트를 개발하며 활용해 본 기술과 도구들입니다."
         />
 
-        <div className="mt-20 flex flex-col gap-12">
+        <div className="mt-20 flex flex-col gap-12 px-6">
           {categories.map((category) => {
             const currentSkills = SkillList.filter(
               (skill) => skill.category === category,

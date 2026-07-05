@@ -3,7 +3,7 @@ import { AbilityList } from "@/constants/abilitys";
 
 export default function AbilitySection() {
   return (
-    <section className="mx-auto max-w-7xl px-8 bg-white">
+    <section className="mx-auto max-w-7xl px-8 pb-24 bg-white">
       <Title
         subTitle="STRENGTH"
         title="핵심 성과"
@@ -15,7 +15,7 @@ export default function AbilitySection() {
             key={item.id}
             className="flex-1 rounded-2xl border border-gray-200 p-8 transition-all duration-300 hover:-translate-y-2 hover:border-primary/30 hover:shadow-xl"
           >
-            <p className="text- font-semibold mb-4">{item.title}</p>
+            <p className="text-lg font-semibold mb-4">{item.title}</p>
             <ul className="space-y-3">
               {item.content.map((content) => (
                 <li
@@ -23,7 +23,7 @@ export default function AbilitySection() {
                   className="flex items-start gap-2 text-gray-600"
                 >
                   <span className="mt-2 h-1 w-1 rounded-full bg-primary shrink-0" />
-                  <span>{content}</span>
+                  <span className="text-base">{content}</span>
                 </li>
               ))}
             </ul>

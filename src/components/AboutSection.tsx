@@ -9,7 +9,7 @@ export default function AboutSection() {
         <ConceptSection />
       </div>
 
-      <div className="relative w-full min-h-screen z-20 shadow-[0_-10px_30px_rgba(0,0,0,0.05)]">
+      <div className="relative bg-white w-full min-h-screen z-20 shadow-[0_-10px_30px_rgba(0,0,0,0.05)]">
         <ProfileSection />
         <AbilitySection />
       </div>
