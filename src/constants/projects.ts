@@ -1,7 +1,7 @@
 import GlobalNomad from "@/assets/images/projects/GlobalNomad/thumbnail.png";
-import GlobalNomadTest1 from "@/assets/images/projects/GlobalNomad/activityList.gif";
-import GlobalNomadTest2 from "@/assets/images/projects/GlobalNomad/formLeave.gif";
-import GlobalNomadTest3 from "@/assets/images/projects/GlobalNomad/formCRUD.gif";
+import GlobalNomadList from "@/assets/images/projects/GlobalNomad/activityList.gif";
+import GlobalNomadLeave from "@/assets/images/projects/GlobalNomad/formLeave.gif";
+import GlobalNomadForm from "@/assets/images/projects/GlobalNomad/formCRUD.gif";
 import DoingFarm from "@/assets/images/projects/DoingFarm/thumbnail.png";
 import DoingFarmTeam from "@/assets/images/projects/DoingFarm/issue.png";
 import DoingFarmDesign from "@/assets/images/projects/DoingFarm/design.png";
@@ -80,7 +80,7 @@ export const projects: ProjectProps[] = [
     detailRole: [
       {
         role: "내 체험 관리 페이지 구현",
-        img: GlobalNomadTest1,
+        img: GlobalNomadList,
         description: [
           "TanStack Query의 Infinite Query와 Intersection Observer를 활용하여 무한 스크롤 기반의 체험 리스트 구현하였습니다.",
           "프로젝트 내 재사용성을 고려하여 스크롤 감지 로직인 useInfiniteScroll을 공통 커스텀 훅으로 추상화",
@@ -89,7 +89,7 @@ export const projects: ProjectProps[] = [
       },
       {
         role: "체험 등록 및 수정 폼 구현",
-        img: GlobalNomadTest2,
+        img: GlobalNomadForm,
         description: [
           "React Hook Form을 도입하여 제목, 일정, 이미지, 주소 등 다양한 입력값을 통합 관리하여 복잡한 폼 상태 효율적으로 관리",
           "Daum 우편번호 API를 서비스 내 모달 아키텍처와 연동하여 안정적인 주소 검색 및 좌표 데이터 매핑 구현",
@@ -98,7 +98,7 @@ export const projects: ProjectProps[] = [
       },
       {
         role: "폼 이탈 방직 기능 구현",
-        img: GlobalNomadTest3,
+        img: GlobalNomadLeave,
         description: [
           "beforeunload 이벤트를 통한 브라우저 새로고침 및 창 닫기 방어와 pushState·popstate 기반의 뒤로가기 가로채기 구현",
           "DOM 클릭 이벤트를 캡처링 단계에서 감지하여 내부 링크(Anchor) 이동을 조건부 전면 제어하는 최적화 로직 구축",
