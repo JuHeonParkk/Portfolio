@@ -6,7 +6,7 @@ export default function HeroSection() {
     >
       <span className="origin-[70%_70%] animate-wave mb-5 text-5xl">👋</span>
 
-      <h1 className="text-5xl md:text-6xl font-bold leading-tight text-gray-900">
+      <h1 className="text-4xl md:text-6xl font-bold leading-tight text-gray-900">
         안녕하세요 <br /> 신입 프론트엔드 개발자
         <br />
         <strong className="text-primary">박주헌</strong>입니다.

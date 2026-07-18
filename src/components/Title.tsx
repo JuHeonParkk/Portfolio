@@ -10,9 +10,9 @@ export default function Title({ subTitle, title, description }: TitleProps) {
       <p className="mb-3 text-sm font-bold tracking-[0.25em] text-primary">
         {subTitle}
       </p>
-      <h2 className="text-4xl font-bold text-gray-900">{title}</h2>
+      <h2 className="text-3xl md:text-4xl font-bold text-gray-900">{title}</h2>
       <div className="mx-auto mt-4 h-1 w-14 rounded-full bg-primary" />
-      <p className="mt-5 text-base text-gray-500 whitespace-pre-line">
+      <p className="mt-5 text-sm md:text-base text-gray-500 whitespace-pre-line">
         {description}
       </p>
     </div>

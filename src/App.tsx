@@ -11,11 +11,14 @@ function App() {
     <>
       <Navbar />
       <div>
-        <div className="sticky top-0 w-full h-screen overflow-hidden">
+        <section
+          id="home"
+          className="sticky top-0 h-screen w-full overflow-hidden"
+        >
           <Reveal className="h-full">
             <HeroSection />
           </Reveal>
-        </div>
+        </section>
         <div className="relative w-full bg-white shadow-[0_-10px_30px_rgba(0,0,0,0.05)]">
           <Reveal>
             <AboutSection />

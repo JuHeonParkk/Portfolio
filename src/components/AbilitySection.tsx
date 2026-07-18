@@ -23,7 +23,7 @@ export default function AbilitySection() {
                   className="flex items-start gap-2 text-gray-600"
                 >
                   <span className="mt-2 h-1 w-1 rounded-full bg-primary shrink-0" />
-                  <span className="text-base">{content}</span>
+                  <span className="text-sm md:text-base">{content}</span>
                 </li>
               ))}
             </ul>
