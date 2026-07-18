@@ -44,8 +44,8 @@ export default function ProfileSection() {
           <p className="mb-3 text-sm font-semibold uppercase tracking-[0.3em] text-primary">
             ABOUT ME
           </p>
-          <h2 className="text-5xl font-bold">박주헌</h2>
-          <p className="text-gray my-5 ml-1 text-xl">Frontend Developer</p>
+          <h2 className="text-3xl md:text-4xl font-bold">박주헌</h2>
+          <p className="text-gray mb-5 text-base">Frontend Developer</p>
 
           <div>
             <ul className="flex flex-col justify-between items-start gap-4 text-gray">

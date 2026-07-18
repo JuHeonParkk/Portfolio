@@ -13,13 +13,13 @@ function App() {
       <div>
         <section
           id="home"
-          className="sticky top-0 h-screen w-full overflow-hidden"
+          className="sticky top-0 left-0 h-screen w-full overflow-hidden"
         >
-          <Reveal className="h-full">
+          <Reveal>
             <HeroSection />
           </Reveal>
         </section>
-        <div className="relative w-full bg-white shadow-[0_-10px_30px_rgba(0,0,0,0.05)]">
+        <div className="relative w-full bg-gray-50 shadow-[0_-10px_30px_rgba(0,0,0,0.05)]">
           <Reveal>
             <AboutSection />
           </Reveal>
