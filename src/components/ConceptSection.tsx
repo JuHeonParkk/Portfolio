@@ -44,11 +44,13 @@ export default function ConceptSection() {
               ) : (
                 <span
                   key={index}
-                  className={
-                    item.active
-                      ? "rounded-full bg-primary px-8 py-4 text-lg font-bold text-white shadow-md"
-                      : "rounded-full border border-primary/40 bg-white px-8 py-4 text-lg font-bold text-primary"
-                  }
+                  className={`transition-all duration-300 ease-out hover:-translate-y-2 hover:border-primary/30 hover:shadow-xl 
+                    ${
+                      item.active
+                        ? "rounded-full bg-primary px-8 py-4 text-lg font-bold text-white shadow-md"
+                        : "rounded-full border border-primary/40 bg-white px-8 py-4 text-lg font-bold text-primary"
+                    }
+                  `}
                 >
                   {item.text}
                 </span>
