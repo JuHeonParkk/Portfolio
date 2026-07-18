@@ -17,7 +17,6 @@ import DubugDubug from "@/assets/images/projects/DubugDubug/thumbnail.png";
 import DubugDubugDesign from "@/assets/images/projects/DubugDubug/design.png";
 import DubugDubugLogin from "@/assets/images/projects/DubugDubug/login.png";
 import DubugDubugMyPage from "@/assets/images/projects/DubugDubug/mypage.png";
-import PortFolio from "@/assets/images/projects/PortFolio/thumbnail.png";
 
 interface DetailRole {
   role: string;
@@ -82,7 +81,7 @@ export const projects: ProjectProps[] = [
         role: "내 체험 관리 페이지 구현",
         img: GlobalNomadList,
         description: [
-          "TanStack Query의 Infinite Query와 Intersection Observer를 활용하여 무한 스크롤 기반의 체험 리스트 구현하였습니다.",
+          "TanStack Query의 Infinite Query와 Intersection Observer를 활용하여 무한 스크롤 기반의 체험 리스트 구현",
           "프로젝트 내 재사용성을 고려하여 스크롤 감지 로직인 useInfiniteScroll을 공통 커스텀 훅으로 추상화",
           "데이터의 불변성을 보장하는 순수 함수 형태의 정렬 유틸리티 함수를 구축하여 가격순·리뷰순·최신순 정렬 기능 구현",
         ],
@@ -105,6 +104,13 @@ export const projects: ProjectProps[] = [
           "사용자가 폼 수정을 취소하거나 뒤로가기를 실행할 때 이탈 경고 커스텀 모달과 연동하여 작성 중인 데이터 유실을 방지하는 안정적인 UX 완성",
         ],
       },
+      {
+        role: "SVG 아이콘 관리 체계 구축",
+        description: [
+          "SVG마다 팀원들이 크기와 색상을 직접 수정해야 해 재사용이 어려웠던 문제를 SVGR/Webpack으로 개선하여 아이콘 사용 방식을 표준화",
+          "Webpack과 SVGR을 설정하여 SVG을 React 컴포넌트로 사용할 수 있도록 환경을 구축하고, props를 통해 아이콘을 쉽게 커스터마이징할 수 있도록 사용 방식 표준화 진행",
+        ],
+      },
     ],
     troubleShooting: [
       {
@@ -122,7 +128,7 @@ export const projects: ProjectProps[] = [
     ],
     learn: [
       "TanStack Query를 활용한 서버 상태 관리",
-      "React Hook Form 기반 복잡한 폼을 간단하게 구현하여 관리할 수 있었습니다.",
+      "React Hook Form 기반 복잡한 폼을 간단하게 구현하여 관리",
       "Next.js App Router 구조",
       "Server Component와 Client Component의 역할",
       "Feature 기반 폴더 구조 설계",
@@ -256,16 +262,17 @@ export const projects: ProjectProps[] = [
         role: "사용자 경험 개선을 위한 UI 리디자인 및 퍼블리싱",
         img: OpenMindDesign,
         description: [
-          "사용자가 서비스를 이용하는 전체 과정을 분석하여, 기존 디자인에서 놓쳤던 비어있는 화면이나 컴포넌트를 찾아내어 개선",
-          "이용 흐름이 중간에 끊기지 않고 자연스럽게 이어지도록 화면을 새로 디자인하고 퍼블리싱 진행",
+          "사용자 플로우를 분석하여 누락된 화면과 컴포넌트를 추가하고 UI를 리디자인",
+          "서비스 이용 흐름이 자연스럽게 이어지도록 화면을 퍼블리싱",
         ],
       },
       {
         role: "사용자별 피드 페이지 조회 및 질문 등록 기능 구현",
         img: OpenMindQuestion,
         description: [
-          "Axios와 REST API를 사용하여 각 사용자 고유의 피드 데이터를 받아오고(GET), 화면 전체 새로고침 없이 리스트 상태만 실시간으로 즉시 갱신해주는 익명 질문 등록(POST) 폼 구현",
-          "유저가 버튼을 누르는 즉시 화면 숫자가 바로 올라가는 '낙관적 업데이트' 방식을 도입하여 서버 응답 대기 없는 쾌적한 좋아요 기능 구축",
+          "Axios와 REST API를 활용하여 사용자별 피드 조회 및 익명 질문 등록 기능 구현",
+          "질문 등록 시 리스트만 즉시 갱신하여 전체 페이지 새로고침 없이 화면 업데이트",
+          "낙관적 업데이트를 적용해 서버 응답을 기다리지 않는 좋아요 인터랙션 구현",
           "API가 유저의 기존 클릭 상태를 저장해주지 않는 한계를 브라우저 로결스토리지를 활용한 방어 코드로 우회하여 싫어요 중복 클릭 방지 처리 구현",
           "좋아요 연타 시 화면이 끊기지 않도록 useState 대신 useRef 변수와 타이머를 활용해 2초 내 10회 클릭 시 콤보 이펙트가 터지는 인터랙션 완성",
         ],
@@ -274,8 +281,9 @@ export const projects: ProjectProps[] = [
         role: "SNS 공유 및 카카오톡 API 연동",
         img: OpenMindShare,
         description: [
-          "유저들이 자신의 질문 페이지를 쉽게 소문낼 수 있도록 주소 링크 복사 및 다양한 SNS 공유 기능 구현",
-          "카카오 공식 개발자 도구(SDK)와 메시지 템플릿을 활용하여 예쁜 카드로 공유되는 카카오톡 공유 기능 구축",
+          "링크 복사, Facebook, 카카오톡 공유 기능 구현",
+          "카카오 Custom Template을 활용하여 공유 카드 구성",
+          "공유 URL을 원본 피드로 통일하여 접근 불가 문제 해결",
         ],
       },
       {
@@ -291,30 +299,32 @@ export const projects: ProjectProps[] = [
         img: OpenMindNavigation,
         description: [
           "피드 글이 길어져서 스크롤을 많이 내렸을 때도 상단에 고정되어 편리한 이동을 돕는 헤더 UI 설계",
-          "고정 헤더의 유저 이름을 클릭하면 화면 맨 위로 부드럽게 이동하는 스크롤 업 기능을 만들어 긴 콘텐츠 탐색 편의성 극대화",
+          "고정 헤더의 유저 이름을 클릭하면 화면 맨 위로 부드럽게 이동하는 스크롤 업 기능을 만들어 긴 콘텐츠 탐색 편의성 제공",
         ],
       },
       {
         role: "브라우저 내장 API를 활용한 상대 시간 포맷팅 유틸 함수 구현",
         description: [
-          "브라우저 내장 API인 `Intl.RelativeTimeFormat`을 도입하여 번들 크기 최적화",
-          "`{ numeric: 'auto' }` 옵션을 통해 복잡한 분기문 없이도 '오늘', '어제', 'n일 전' 등 언어권에 맞는 미세한 상대 시간 예외 처리 구현",
-          "어떤 컴포넌트에서든 생성일(createdAt) 데이터만 넘겨주면 정밀한 값을 반환하도록 독립적인 공통 유틸 함수로 분리하여 재사용성 극대화",
+          "Intl.RelativeTimeFormat을 활용하여 상대 시간 포맷팅 구현",
+          "별도 라이브러리 없이 '오늘', '어제', 'n일 전' 등 언어별 상대 시간 지원",
+          "생성일만 전달하면 사용할 수 있도록 공통 유틸 함수로 분리",
         ],
       },
     ],
     troubleShooting: [
       {
         trouble:
-          "제공된 백엔드 API가 전체 리액션(좋아요/싫어요)의 누적 개수만 보내줄 뿐, '현재 유저의 클릭 여부'를 저장해 주지 않아 새로고침 시 이력이 사라지고 무한 클릭이 가능한 UX 결함 발생",
+          "조회 API가 좋아요·싫어요 개수만 제공하고 사용자별 리액션 여부를 제공하지 않아 중복 입력을 제어할 수 없었습니다.",
+
         solution:
-          "서버 API를 수정할 수 없는 상황에서 클라이언트 단의 아이디어로 극복. '싫어요'는 중복 방지를 위해 클릭 즉시 브라우저의 `localStorage`에 질문 ID를 저장하고, 새로고침 후에도 이 상태를 읽어와 추가 클릭을 원천 차단함. '좋아요'는 유저가 응답을 기다리지 않도록 클릭 즉시 화면 숫자를 먼저 올리는 '낙관적 업데이트'를 적용하고, 요청 실패 시에만 데이터를 되돌리는(Rollback) 예외 처리를 구축해 자연스러운 인터랙션 완성",
+          "LocalStorage를 활용해 사용자별 리액션 상태를 관리하고, 싫어요는 1회만 허용하도록 구현했습니다. 좋아요는 낙관적 업데이트를 적용해 즉시 UI를 반영하고 요청 실패 시 Rollback 처리하여 자연스러운 사용자 경험을 제공했습니다.",
       },
       {
         trouble:
-          "좋아요 버튼을 연타할 때마다 매번 화면이 리렌더링되면서 연타 횟수 카운트와 타이머가 꼬이고 애니메이션 이펙트가 부자연스럽게 끊기는 현상 발생",
+          "좋아요 버튼을 빠르게 연속 클릭하면 상태 변경으로 인해 리렌더링이 반복되면서 카운트와 타이머가 초기화되어 콤보 이펙트가 정상적으로 동작하지 않았습니다.",
+
         solution:
-          "클릭 횟수와 타이머 ID를 화면을 새로 그리는 `useState` 대신, 값이 바뀌어도 리렌더링을 유발하지 않는 `useRef`에 저장하여 성능 저하를 방지. 유저가 2초 이내에 10회 이상 연속으로 클릭할 때만 콤보 이펙트 애니메이션이 실행되도록 수동으로 제어하고, 2초간 입력이 없으면 카운트를 초기화하는 정밀한 타이머 매커니즘을 구현해 성능과 재미 요소를 모두 확보",
+          "useRef에 클릭 횟수와 타이머를 저장하여 불필요한 리렌더링을 제거했습니다. 2초 내 10회 이상 클릭 시에만 콤보 이펙트를 실행하고 일정 시간 입력이 없으면 상태를 초기화하도록 구현했습니다.",
       },
     ],
     learn: [
@@ -388,32 +398,5 @@ export const projects: ProjectProps[] = [
     github: "https://github.com/Capstone-Walking/Capstone_FE",
     deploy: "https://capstonewalking.netlify.app/",
     memberCount: "Frontend 3명 Backend 3명",
-  },
-  {
-    id: 5,
-    title: "포트폴리오",
-    period: "26.03.15 - 24.07.05",
-    description: "웹 포트폴리오 작업",
-    thumbnail: PortFolio,
-    techStack: [
-      "React",
-      "Vite",
-      "TypeScript",
-      "Tailwind CSS",
-      "Figma",
-      "GitHub",
-      "Vercel",
-    ],
-    role: ["UI 디자인", "페이지 퍼블리싱 및 기능 구현"],
-    learn: [
-      "다양한 레퍼런스 탐색을 통해 사용자가 읽기 편한 화면 구조를 배울 수 있었습니다.",
-    ],
-    try: [
-      "초기 설계 단계에서 기존에 준비하던 React 환경을 선택해 빠르게 구축했으나, SEO와 초기 로딩 속도 측면에서 SSR의 필요성을 느꼈습니다. 향후 Next.js 프레임워크로의 마이그레이션을 계획하고 있습니다.",
-      "마이그레이션과 더불어 Next.js의 내장 최적화 기능을 활용하여 다크/라이트 모드 등의 글로벌 테마 시스템을 구축하고, 다국어 지원 기능을 확장하여 보다 고도화된 사용자 경험을 제공하고자 합니다.",
-    ],
-    github: "https://github.com/JuHeonParkk/Portfolio",
-    deploy: "https://capstonewalking.netlify.app/",
-    memberCount: "Frontend 1명",
   },
 ];
