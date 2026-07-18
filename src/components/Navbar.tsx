@@ -36,33 +36,37 @@ export default function Navbar() {
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
+      const scrollY = window.scrollY;
 
-      if (window.scrollY === 50) {
+      setIsScrolled(scrollY > 50);
+
+      if (scrollY <= 50) {
         setIsSelected("home");
       }
     };
 
     window.addEventListener("scroll", handleScroll);
-
     handleScroll();
 
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   useEffect(() => {
-    const sections = document.querySelectorAll("section[id]");
+    const sections = document.querySelectorAll<HTMLElement>("section[id]");
 
     const observer = new IntersectionObserver(
       (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            setIsSelected(entry.target.id);
-          }
-        });
+        const visibleSection = entries
+          .filter((entry) => entry.isIntersecting)
+          .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
+
+        if (visibleSection) {
+          setIsSelected(visibleSection.target.id);
+        }
       },
       {
-        threshold: 0.3,
+        threshold: [0.2, 0.4, 0.6],
+        rootMargin: "-20% 0px -50% 0px",
       },
     );
 
@@ -81,9 +85,8 @@ export default function Navbar() {
     >
       <ul className="px-6 py-4  flex items-center justify-between gap-8 md:px-14 md:py-5 md:gap-12 bg-secondary rounded-2xl">
         {navItems.map((item) => (
-          <li>
+          <li key={item.id}>
             <a
-              key={item.id}
               href={`#${item.path}`}
               className="flex items-center justify-center gap-2 transition-all duration-200 ease-out hover:-translate-y-0.5"
               onClick={() => setIsSelected(item.path)}
