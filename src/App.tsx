@@ -10,7 +10,7 @@ function App() {
   return (
     <>
       <Navbar />
-      <div>
+      <main>
         <section
           id="home"
           className="sticky top-0 left-0 h-screen w-full overflow-hidden"
@@ -34,7 +34,7 @@ function App() {
 
           <Footer />
         </div>
-      </div>
+      </main>
     </>
   );
 }

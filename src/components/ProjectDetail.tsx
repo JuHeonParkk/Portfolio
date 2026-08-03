@@ -245,19 +245,23 @@ export default function ProjectDetail({
                 <section className="space-y-4 border-t border-gray-100 py-6">
                   <SectionTitle>트러블 슈팅</SectionTitle>
 
-                  <div className="space-y-8 rounded-xl border border-gray-100 bg-gray-50/50 p-5">
-                    {selectedProject.troubleShooting.map((trouble, index) => (
+                  {selectedProject.troubleShooting.map((trouble, index) => (
+                    <div className="space-y-8 rounded-xl border border-gray-100 bg-gray-50/50 p-5">
                       <article
-                        key={`${trouble.trouble}-${index}`}
+                        key={`${trouble.problem}-${index}`}
                         className="space-y-4"
                       >
-                        <div>
+                        <h3 className="text-lg font-gray-900 font-bold">
+                          [{trouble.title}]
+                        </h3>
+
+                        <div className="border-t border-gray-200 pt-4">
                           <span className="mb-3 inline-block rounded bg-red-50 px-2 py-0.5 text-xs font-bold text-red-600">
                             Problem
                           </span>
 
-                          <p className="pl-2 text-sm font-bold leading-relaxed text-gray-900">
-                            {trouble.trouble}
+                          <p className="pl-2 text-base leading-relaxed text-gray-900">
+                            {trouble.problem}
                           </p>
                         </div>
 
@@ -266,13 +270,36 @@ export default function ProjectDetail({
                             Solution
                           </span>
 
-                          <p className="pl-2 text-sm leading-relaxed text-gray-600">
+                          <p className="pl-2 text-base font-bold  leading-relaxed text-gray-900">
                             {trouble.solution}
+                          </p>
+
+                          {trouble.solutionMore.map((item, i) => (
+                            <p className="pl-2 text-base leading-relaxed text-gray-600">
+                              <li
+                                key={`${item}-${i}`}
+                                className="flex items-start gap-2"
+                              >
+                                <span className="mt-2 h-1 w-1 shrink-0 rounded-full bg-primary" />
+
+                                <span>{item}</span>
+                              </li>
+                            </p>
+                          ))}
+                        </div>
+
+                        <div className="border-t border-gray-200 pt-4">
+                          <span className="mb-3 inline-block rounded bg-primary/5 px-2 py-0.5 text-xs font-bold text-primary">
+                            Result
+                          </span>
+
+                          <p className="pl-2 text-base leading-relaxed text-gray-600">
+                            {trouble.result}
                           </p>
                         </div>
                       </article>
-                    ))}
-                  </div>
+                    </div>
+                  ))}
                 </section>
               )}
 
