@@ -2,20 +2,29 @@ import GlobalNomad from "@/assets/images/projects/GlobalNomad/thumbnail.png";
 import GlobalNomadList from "@/assets/images/projects/GlobalNomad/activityList.gif";
 import GlobalNomadLeave from "@/assets/images/projects/GlobalNomad/formLeave.gif";
 import GlobalNomadForm from "@/assets/images/projects/GlobalNomad/formCRUD.gif";
+import GlobalNomadFavicon from "@/assets/images/projects/GlobalNomad/favicon.svg";
 import DoingFarm from "@/assets/images/projects/DoingFarm/thumbnail.png";
 import DoingFarmTeam from "@/assets/images/projects/DoingFarm/issue.png";
 import DoingFarmDesign from "@/assets/images/projects/DoingFarm/design.png";
 import DoingFarmDashboard from "@/assets/images/projects/DoingFarm/dashboard.gif";
+import DoingFarmFavicon from "@/assets/images/projects/DoingFarm/favicon.png";
+import DoingFarmTag from "@/assets/images/projects/DoingFarm/tag.png";
 import OpenMind from "@/assets/images/projects/OpenMind/thumbnail.png";
 import OpenMindDesign from "@/assets/images/projects/OpenMind/design.png";
 import OpenMindQuestion from "@/assets/images/projects/OpenMind/question.gif";
 import OpenMindShare from "@/assets/images/projects/OpenMind/snsshare.gif";
 import OpenMindNavigation from "@/assets/images/projects/OpenMind/scroll.gif";
 import OpenMindException from "@/assets/images/projects/OpenMind/exception.png";
+import OpenMindFavicon from "@/assets/images/projects/OpenMind/favicon.svg";
 import DubugDubug from "@/assets/images/projects/DubugDubug/thumbnail.png";
 import DubugDubugDesign from "@/assets/images/projects/DubugDubug/design.png";
 import DubugDubugLogin from "@/assets/images/projects/DubugDubug/login.png";
 import DubugDubugMyPage from "@/assets/images/projects/DubugDubug/mypage.png";
+import DubugDubugFavicon from "@/assets/images/projects/DubugDubug/favicon.png";
+import AigoMonFavicon from "@/assets/images/projects/AigoMon/favicon.png";
+import AigoMonThumbnail from "@/assets/images/projects/AigoMon/thumbnail.png";
+import AigoMonResult from "@/assets/images/projects/AigoMon/result.gif";
+import AigoMonWorkFlow from "@/assets/images/projects/AigoMon/workflow.png";
 
 interface DetailRole {
   role: string;
@@ -46,6 +55,7 @@ export interface ProjectProps {
   github?: string;
   deploy?: string;
   memberCount?: string;
+  favicon?: string;
 }
 
 export const projects: ProjectProps[] = [
@@ -104,6 +114,7 @@ export const projects: ProjectProps[] = [
     github: "https://github.com/Capstone-Walking/Capstone_FE",
     deploy: "https://capstonewalking.netlify.app/",
     memberCount: "Frontend 3명 Backend 3명",
+    favicon: DubugDubugFavicon,
   },
   {
     id: 2,
@@ -240,6 +251,7 @@ export const projects: ProjectProps[] = [
     github: "https://github.com/pho9902/open-mind-team3",
     deploy: "https://open-mind-team3.vercel.app/",
     memberCount: "Frontend 4명",
+    favicon: OpenMindFavicon,
   },
   {
     id: 3,
@@ -310,6 +322,7 @@ export const projects: ProjectProps[] = [
       },
       {
         role: "해시 기반 색상 매핑 시스템 설계",
+        img: DoingFarmTag,
         description: [
           "문자열을 해시값으로 변환하여 동일한 사용자 이름과 태그에는 항상 같은 색상이 적용되도록 공통 유틸 함수 구현",
           "Avatar와 태그 컴포넌트에서 동일한 색상 매핑 로직을 재사용하여 중복 코드를 줄이고 일관된 UI 제공",
@@ -361,6 +374,7 @@ export const projects: ProjectProps[] = [
     github: "https://github.com/douk9909/DoingFarm",
     deploy: "https://doing-farm.vercel.app/",
     memberCount: "Frontend 4명",
+    favicon: DoingFarmFavicon,
   },
   {
     id: 4,
@@ -485,6 +499,7 @@ export const projects: ProjectProps[] = [
     github: "https://github.com/Hanbh97/GlobalNomad",
     deploy: "https://global-nomad-ghn6.vercel.app/",
     memberCount: "Frontend 6명",
+    favicon: GlobalNomadFavicon,
   },
   {
     id: 5,
@@ -492,7 +507,7 @@ export const projects: ProjectProps[] = [
     period: "26.07.09 - 진행중",
     description:
       "사용자가 입력한 스트레스 상황을 기반으로 캐릭터 카드를 생성하는 AI 서비스",
-    thumbnail: DoingFarm,
+    thumbnail: AigoMonThumbnail,
     techStack: [
       "Next.js",
       "TypeScript",
@@ -509,7 +524,8 @@ export const projects: ProjectProps[] = [
     ],
     detailRole: [
       {
-        role: "프로젝트 기획- AI Workflow 설계",
+        role: "프로젝트 기획 (AI Workflow 설계)",
+        img: AigoMonWorkFlow,
         description: [
           "AI 서비스의 전체 Workflow를 설계하여 사용자 입력 → 텍스트 생성(Gemini) → 이미지 생성(Pollinations) → 카드 조합 → 결과 출력의 처리 흐름을 정의",
           "정상 응답과 예외 상황(입력 검증, Timeout, 생성 실패)을 모두 고려한 AI 처리 플로우를 설계",
@@ -517,6 +533,7 @@ export const projects: ProjectProps[] = [
       },
       {
         role: "AI 콘텐츠 생성 기능 구현",
+        img: AigoMonResult,
         description: [
           "Gemini AI SDK와 Pollinations API를 연동하여 스트레스 상황 기반 캐릭터 이미지 및 텍스트 생성 기능 구현",
           "Route Handler를 활용하여 AI API 호출을 분리하고, 입력 검증 및 예외 처리를 구현",
@@ -583,5 +600,6 @@ export const projects: ProjectProps[] = [
     github: "https://github.com/JuHeonParkk/Aigo-mon",
     deploy: "https://aigo-mon.vercel.app/",
     memberCount: "Frontend 1명",
+    favicon: AigoMonFavicon,
   },
 ];

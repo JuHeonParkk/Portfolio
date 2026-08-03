@@ -1,42 +1,17 @@
-import Navbar from "@/components/Navbar";
-import HeroSection from "@/components/HeroSection";
-import AboutSection from "@/components/AboutSection";
-import SkillsSection from "@/components/SkillSection";
-import ProjectSection from "@/components/ProjectSection";
-import Footer from "@/components/Footer";
-import Reveal from "./components/Reveal";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import HomePage from "./pages/HomePage";
+import ProjectDetailPage from "./pages/ProjectDetailPage";
+import ScrollToTop from "./components/ScrollTop";
 
-function App() {
+export default function App() {
   return (
-    <>
-      <Navbar />
-      <main>
-        <section
-          id="home"
-          className="sticky top-0 left-0 h-screen w-full overflow-hidden"
-        >
-          <Reveal>
-            <HeroSection />
-          </Reveal>
-        </section>
-        <div className="relative w-full bg-gray-50 shadow-[0_-10px_30px_rgba(0,0,0,0.05)]">
-          <Reveal>
-            <AboutSection />
-          </Reveal>
+    <BrowserRouter>
+      <ScrollToTop />
 
-          <Reveal>
-            <SkillsSection />
-          </Reveal>
-
-          <Reveal>
-            <ProjectSection />
-          </Reveal>
-
-          <Footer />
-        </div>
-      </main>
-    </>
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/projects/:projectId" element={<ProjectDetailPage />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
-
-export default App;

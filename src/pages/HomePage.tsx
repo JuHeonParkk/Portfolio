@@ -1,0 +1,42 @@
+import Navbar from "@/components/Navbar";
+import HeroSection from "@/components/HeroSection";
+import AboutSection from "@/components/AboutSection";
+import SkillsSection from "@/components/SkillSection";
+import ProjectSection from "@/components/ProjectSection";
+import Footer from "@/components/Footer";
+import Reveal from "@/components/Reveal";
+
+export default function HomePage() {
+  return (
+    <>
+      <Navbar />
+
+      <main>
+        <section
+          id="home"
+          className="sticky top-0 left-0 h-screen w-full overflow-hidden"
+        >
+          <Reveal>
+            <HeroSection />
+          </Reveal>
+        </section>
+
+        <div className="relative w-full bg-gray-50 shadow-[0_-10px_30px_rgba(0,0,0,0.05)]">
+          <Reveal>
+            <AboutSection />
+          </Reveal>
+
+          <Reveal>
+            <SkillsSection />
+          </Reveal>
+
+          <Reveal>
+            <ProjectSection />
+          </Reveal>
+
+          <Footer />
+        </div>
+      </main>
+    </>
+  );
+}

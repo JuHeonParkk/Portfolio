@@ -1,17 +1,11 @@
-import { useState } from "react";
+import { Link } from "react-router-dom";
 
 import { projects } from "@/constants/projects";
-import type { ProjectProps } from "@/constants/projects";
 import { SkillList } from "@/constants/tech";
 
 import Title from "./Title";
-import ProjectDetail from "./ProjectDetail";
 
 export default function ProjectSection() {
-  const [selectedProject, setSelectedProject] = useState<ProjectProps | null>(
-    null,
-  );
-
   return (
     <section id="project" className="mx-auto max-w-7xl px-8 py-32">
       <Title
@@ -20,11 +14,11 @@ export default function ProjectSection() {
         description="협업을 통해 서비스를 구현하고 문제를 해결한 프로젝트를 소개합니다."
       />
       <div className="grid gap-8 grid-cols-1 md:grid-cols-3">
-        {projects.map((project) => (
-          <button
+        {[...projects].reverse().map((project) => (
+          <Link
+            to={`/projects/${project.id}`}
             key={project.id}
             type="button"
-            onClick={() => setSelectedProject(project)}
             className="group overflow-hidden border border-gray-200 rounded-2xl transition relative hover:-translate-y-2 hover:shadow-lg hover:shadow-teal-100 bg-white text-start isolate"
           >
             <div className="w-full h-60 overflow-hidden relative rounded-t-2xl will-change-transform">
@@ -71,16 +65,9 @@ export default function ProjectSection() {
                 <p className="text-lg font-semibold">자세히 보기</p>
               </div>
             </div>
-          </button>
+          </Link>
         ))}
       </div>
-
-      {selectedProject && (
-        <ProjectDetail
-          selectedProject={selectedProject}
-          setSelectedProject={setSelectedProject}
-        />
-      )}
     </section>
   );
 }
