@@ -384,7 +384,7 @@ export const projects: ProjectProps[] = [
     techStack: [
       "Next.js",
       "TypeScript",
-      "Tailwind CSS",
+      "TailwindCSS",
       "Axios",
       "TanStack Query",
       "React Hook Form",

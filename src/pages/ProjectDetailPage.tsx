@@ -78,7 +78,6 @@ export default function ProjectDetailPage() {
             </dl>
           </header>
 
-          {/* 사용 기술 */}
           <DocumentSection title="🛠️ 사용 기술">
             <div className="flex flex-wrap gap-2">
               {selectedProject.techStack.map((tech) => {
@@ -86,22 +85,20 @@ export default function ProjectDetailPage() {
                   (skill) => skill.name === tech,
                 );
 
-                if (!skillInfo) {
-                  return null;
-                }
-
                 return (
                   <span
                     key={tech}
                     className="inline-flex items-center gap-1.5 rounded-md bg-gray-100 px-2.5 py-1.5 text-sm text-gray-700"
                   >
-                    <img
-                      src={skillInfo.icon}
-                      alt=""
-                      className="h-4 w-4 object-contain"
-                    />
+                    {skillInfo && (
+                      <img
+                        src={skillInfo.icon}
+                        alt=""
+                        className="h-4 w-4 object-contain"
+                      />
+                    )}
 
-                    {skillInfo.name}
+                    {tech}
                   </span>
                 );
               })}

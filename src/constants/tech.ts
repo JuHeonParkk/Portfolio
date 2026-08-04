@@ -50,7 +50,7 @@ export const SkillList: SkillItem[] = [
     icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg",
   },
   {
-    name: "Tailwind CSS",
+    name: "TailwindCSS",
     description: "유틸리티 클래스 기반 스타일링",
     category: "Styling",
     icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg",
