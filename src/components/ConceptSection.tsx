@@ -22,7 +22,7 @@ export default function ConceptSection() {
   return (
     <section
       id="about"
-      className="w-full h-screen bg-gray-50 flex items-center justify-center"
+      className="w-full h-full bg-gray-50 flex items-center justify-center py-15"
     >
       <div className="w-full max-w-4xl px-4">
         <Title

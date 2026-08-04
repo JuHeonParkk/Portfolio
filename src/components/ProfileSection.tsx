@@ -33,7 +33,7 @@ export default function ProfileSection() {
   ] as const;
 
   return (
-    <section className="mx-auto max-w-4xl h-full px-8 bg-white py-32">
+    <section className="mx-auto max-w-4xl min-h-screen px-8 bg-white py-32">
       <div className="flex flex-col md:flex-row items-center gap-20">
         <img
           src={ProfileImage}

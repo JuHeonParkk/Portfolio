@@ -3,7 +3,7 @@ import { AbilityList } from "@/constants/abilitys";
 
 export default function AbilitySection() {
   return (
-    <section className="mx-auto max-w-7xl px-8 pb-24 bg-white">
+    <section className="mx-auto max-w-7xl px-8 pb-50 bg-white">
       <Title
         subTitle="STRENGTH"
         title="핵심 성과"
