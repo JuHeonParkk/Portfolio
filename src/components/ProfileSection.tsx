@@ -80,9 +80,8 @@ export default function ProfileSection() {
         <div>
           <p className="font-semibold text-base leading-8 text-gray-700 md:text-lg">
             사용자 경험을 개선하고, 유지보수성을 고려한 코드를 설계 하는 신입
-            프론트엔드 개발자 박주헌입니다.
-            <br />
-            사용자와 팀 모두에게 더 나은 개발 경험을 제공할 수 있도록
+            프론트엔드 개발자 박주헌입니다. 사용자와 팀 모두에게 더 나은 개발
+            경험을 제공할 수 있도록
             <span className="text-primary">
               {" "}
               끊임없이 배우고 개선하는 개발자
@@ -100,7 +99,7 @@ export default function ProfileSection() {
           </div>
 
           <p className="leading-8 text-gray-600">
-            React와 Next.js 기반의 팀 프로젝트를 진행하며 단순한 기능 구현을
+            React와 TypeScript 기반의 팀 프로젝트를 진행하며 단순한 기능 구현을
             넘어{" "}
             <strong className="text-foreground">
               사용자가 편리하게 이용할 수 있는 서비스와 팀원들이 쉽게 유지보수할

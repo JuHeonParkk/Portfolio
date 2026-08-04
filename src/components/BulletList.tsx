@@ -4,7 +4,7 @@ interface BulletListProps {
 
 export default function BulletList({ items }: BulletListProps) {
   return (
-    <ul className="space-y-3">
+    <ul className="space-y-3 mt-2">
       {items.map((item, index) => (
         <li
           key={`${item}-${index}`}
