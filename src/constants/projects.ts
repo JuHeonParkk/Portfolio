@@ -24,7 +24,7 @@ import DubugDubugFavicon from "@/assets/images/projects/DubugDubug/favicon.png";
 import AigoMonFavicon from "@/assets/images/projects/AigoMon/favicon.png";
 import AigoMonThumbnail from "@/assets/images/projects/AigoMon/thumbnail.png";
 import AigoMonResult from "@/assets/images/projects/AigoMon/result.gif";
-import AigoMonWorkFlow from "@/assets/images/projects/AigoMon/workflow.png";
+import AigoMonWorkFlow from "@/assets/images/projects/AigoMon/diagram.png";
 
 interface DetailRole {
   role: string;
@@ -572,19 +572,19 @@ export const projects: ProjectProps[] = [
     ],
     troubleShooting: [
       {
-        title: "이미지 생성 프롬프트 개선을 통한 캐릭터 일관성 확보",
+        title: "이미지 생성 결과 일관성 개선",
         problem:
-          "초기에는 대표 캐릭터의 외형을 간단한 한국어 프롬프트로만 정의하여 이미지를 생성했습니다. 이로 인해 동일한 캐릭터를 생성하더라도 요청마다 얼굴 형태, 분위기 등이 계속 달라져 서비스의 대표 캐릭터로 사용하기 어려운 문제가 있었습니다.",
+          "AI 이미지 생성 시 동일한 캐릭터를 요청하더라도 프롬프트와 모델에 따라 외형, 색상, 스타일이 매번 달라져 캐릭터의 일관성을 유지하기 어려웠습니다.",
         solution:
-          "대표 캐릭터의 외형을 구성하는 요소를 세분화하여 Prompt 작성을 진행했습니다.",
+          "프롬프트가 같아도 이미지 생성 모델에 따른 결과가 다르다는 것을 알고, Image-to-Image 방식으로 캐릭터 스타일을 명확히 지정해주었습니다. ",
         solutionMore: [
-          "캐릭터의 외형, 색상, 분위기 등 변경되지 않아야 하는 특징을 명시적으로 정의",
-          "이미지 생성 Prompt를 텍스트 생성 Prompt와 분리하여 역할을 명확히 구성",
-          "이미지 생성 Prompt와 텍스트 생성 Prompt를 분리하여 각각 하나의 역할만 수행하도록 설계",
-          "사용자 입력에 따라 변경되는 행동·상황 정보만 동적으로 추가하도록 구조 개선",
+          "현재 이미지 생성 모델로 Text-to-Image 방식만으로는 대표 캐릭터의 정체성을 유지하기 어렵다고 판단",
+          "Image-to-Image가 가능한 Modal(klein)로 변경 후 기준 캐릭터 이미지를 참조하도록 변경하여 캐릭터 디자인을 고정",
+          "캐릭터의 외형(색상, 비율, 얼굴, 스타일)과 변경 가능한 요소(표정, 포즈, 행동)를 분리하여 프롬프트를 설계",
+          "캐릭터 외형만 prompt로 설정하고, 사용자 입력 값에 따른 행동 값은 따로 처리해주도록 하여 상황에 맞는 캐릭터가 출력되도록 함",
         ],
         result:
-          "Prompt를 개선하여 생성되는 캐릭터의 외형과 분위기의 일관성을 높였으며, 기존보다 대표 캐릭터의 특징을 안정적으로 반영할 수 있었습니다. 다만 대표 캐릭터와 완전히 동일한 결과를 생성하기에는 한계가 있어 추가적인 Prompt 개선이 필요한 상태입니다.",
+          "캐릭터의 외형과 스타일을 안정적으로 유지하면서도, 사용자 입력에 따라 다양한 상황과 감정을 자연스럽게 표현하는 이미지를 생성할 수 있었습니다.",
       },
     ],
     learn: [
