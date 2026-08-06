@@ -25,6 +25,8 @@ import AigoMonFavicon from "@/assets/images/projects/AigoMon/favicon.png";
 import AigoMonThumbnail from "@/assets/images/projects/AigoMon/thumbnail.png";
 import AigoMonResult from "@/assets/images/projects/AigoMon/result.gif";
 import AigoMonWorkFlow from "@/assets/images/projects/AigoMon/diagram.png";
+import AigoMonLoading from "@/assets/images/projects/AigoMon/loading.gif";
+import AigoMonCharacter from "@/assets/images/projects/AigoMon/character_sheet.png";
 
 interface DetailRole {
   role: string;
@@ -518,7 +520,7 @@ export const projects: ProjectProps[] = [
   {
     id: 5,
     title: "Aigo-mon",
-    period: "26.07.09 - 진행중",
+    period: "26.07.09 - 26.08.06",
     description:
       "사용자가 입력한 스트레스 상황을 기반으로 캐릭터 카드를 생성하는 AI 서비스",
     thumbnail: AigoMonThumbnail,
@@ -532,33 +534,37 @@ export const projects: ProjectProps[] = [
       "Figma",
     ],
     role: [
-      "프로젝트 기획",
+      "프로젝트 기획 및 AI Workflow 설계",
       "UI/UX 디자인",
-      "Gemini API 연동 및 Pollinations API 연동",
+      "Gemini AI SDK 및 Pollinations API 연동",
+      "Prompt Engineering 및 AI 응답 구조 설계",
+      "Next.js Route Handler 기반 AI API 구현",
+      "테스트 및 CI 환경 구축",
     ],
     detailRole: [
       {
         role: "프로젝트 기획 (AI Workflow 설계)",
         img: AigoMonWorkFlow,
         description: [
-          "AI 서비스의 전체 Workflow를 설계하여 사용자 입력 → 텍스트 생성(Gemini) → 이미지 생성(Pollinations) → 카드 조합 → 결과 출력의 처리 흐름을 정의",
-          "정상 응답과 예외 상황(입력 검증, Timeout, 생성 실패)을 모두 고려한 AI 처리 플로우를 설계",
+          "사용자 입력 → Gemini 텍스트 생성 → Pollinations 이미지 생성 → 카드 렌더링으로 이어지는 AI Workflow를 설계",
+          "입력 검증, Timeout, AI 생성 실패 등 예외 상황을 고려한 서버 처리 플로우를 설계",
         ],
       },
       {
         role: "AI 콘텐츠 생성 기능 구현",
         img: AigoMonResult,
         description: [
-          "Gemini AI SDK와 Pollinations API를 연동하여 스트레스 상황 기반 캐릭터 이미지 및 텍스트 생성 기능 구현",
-          "Route Handler를 활용하여 AI API 호출을 분리하고, 입력 검증 및 예외 처리를 구현",
-          "Prompt Engineering을 통해 캐릭터 말투, 분위기, 이미지 생성 규칙을 설계하여 일관된 AI 결과 생성",
+          "Gemini AI SDK와 Pollinations API를 연동하여 스트레스 상황 기반 캐릭터 카드 생성 기능 구현",
+          "Next.js Route Handler를 활용해 AI API 호출, 입력 검증, 예외 처리를 서버에서 관리",
+          "Prompt Engineering을 통해 캐릭터 말투, 분위기, 이미지 생성 규칙을 설계하여 결과의 일관성 향상",
         ],
       },
+
       {
         role: "AI 응답 구조화 및 타입 안정성 확보",
         description: [
           "Gemini Structured Output(responseSchema)을 적용하여 AI 응답을 TypeScript 타입과 일치하는 JSON 형태로 정형화",
-          "프롬프트와 응답 스키마를 함께 설계하여 응답 파싱 오류를 최소화하고 안정적인 데이터 처리 구조 구축",
+          "프롬프트와 응답 스키마를 함께 설계하여 응답 파싱 오류를 줄이고, 안정적인 데이터 처리 구조 구축",
         ],
       },
       {
@@ -567,6 +573,23 @@ export const projects: ProjectProps[] = [
           "GitHub Actions 기반 CI를 구축하여 ESLint, Type Check, Test, Build 자동화",
           "Husky를 활용하여 Commit 전 코드 품질을 검증하는 개발 환경 구축",
           "AI 코드 리뷰(CodeRabbit)를 도입하여 Pull Request마다 코드 리뷰와 개선 사항을 자동으로 확인하고, 코드 품질과 리뷰 효율 향상",
+        ],
+      },
+      {
+        role: "[리팩토링] AI 이미지 생성 최적화",
+        img: AigoMonCharacter,
+        description: [
+          "Image-to-Image 방식을 적용하여 대표 캐릭터의 외형과 스타일을 일관되게 유지",
+          "캐릭터의 고정 요소와 변경 가능한 요소를 분리한 Prompt Engineering으로 다양한 상황에서도 동일한 캐릭터 생성",
+          "기준 이미지를 하나로 통합하여 이미지 생성 속도를 개선하고 Timeout 발생을 감소",
+        ],
+      },
+      {
+        role: "[리팩토링] AI 사용자 경험 개선",
+        img: AigoMonLoading,
+        description: [
+          "AI 생성 단계(분석 → 도감 생성 → 이미지 생성)에 맞춘 로딩 상태를 제공",
+          "Timeout, API 오류, 생성 실패 상황을 구분하여 사용자 친화적인 오류 메시지와 재시도 기능 구현",
         ],
       },
     ],
@@ -590,13 +613,15 @@ export const projects: ProjectProps[] = [
     learn: [
       "Gemini AI SDK와 Pollinations API를 연동하며 AI API 호출 방식과 Prompt Engineering을 경험했습니다.",
       "Structured Output(responseSchema)을 활용하여 AI 응답을 TypeScript 타입과 일치하는 JSON 형태로 정형화하는 방법을 익혔습니다.",
-      "Next.js Route Handler를 활용해 AI API 호출, 입력 검증, 예외 처리를 서버에서 관리하는 구조를 학습했습니다.",
+      "Image-to-Image 방식을 적용하여 대표 캐릭터를 기준으로 외형과 스타일의 일관성을 유지하는 프롬프트 설계 방법을 학습했습니다.",
+      "Next.js Route Handler를 활용해 AI API 호출, 입력 검증, 예외 처리 및 에러 응답을 서버에서 관리하는 구조를 구현했습니다.",
+      "AI 생성 단계(분석 → 도감 생성 → 이미지 생성)에 맞춘 로딩 상태를 제공하여 대기 시간을 직관적으로 전달하는 사용자 경험을 개선했습니다.",
       "Vitest와 React Testing Library를 활용하여 공통 컴포넌트 테스트를 작성하고 UI 안정성을 검증하는 방법을 익혔습니다.",
       "GitHub Actions와 Husky를 활용하여 코드 검사, 테스트, 빌드를 자동화하는 CI 환경을 구축했습니다.",
     ],
     try: [
-      "대표 캐릭터의 외형과 분위기를 일관되게 생성하기에는 현재 이미지 Prompt의 설계가 충분하지 않았습니다. 캐릭터의 핵심 특징과 스타일을 체계적으로 정의한 Prompt Engineering을 통해 결과의 일관성을 높여야 할 것 같습니다.",
-      "현재 AI 응답은 생성이 완료된 후 한 번에 반환되어 사용자가 대기 시간을 길게 느낄 수 있습니다. Streaming Response를 적용하여 생성 과정을 실시간으로 제공하는 방식으로 사용자 경험을 개선을 진행하고자 합니다.",
+      "현재 Gemini와 이미지 생성 API를 순차적으로 호출하기 때문에 사용자가 결과를 확인하기까지 대기 시간이 발생합니다. Streaming Response를 적용하여 생성 과정과 결과를 점진적으로 제공하는 방식으로 사용자 경험을 개선하고자 합니다.",
+      "현재는 Pollinations Image API를 활용하고 있지만, 다양한 이미지 생성 모델을 비교하여 생성 품질, 속도, 비용 측면에서 최적의 모델을 검증하고 적용해보고자 합니다.",
     ],
     github: "https://github.com/JuHeonParkk/Aigo-mon",
     deploy: "https://aigo-mon.vercel.app/",
