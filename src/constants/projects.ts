@@ -75,6 +75,7 @@ export const projects: ProjectProps[] = [
       "Axios",
       "Swagger UI",
       "Figma",
+      "Illustrator",
       "GitHub",
     ],
     role: ["프로젝트 UI/UX 디자인", "카카오 로그인", "마이페이지 기능 구현"],
@@ -137,7 +138,8 @@ export const projects: ProjectProps[] = [
     ],
     role: [
       "UI리디자인",
-      "피드페이지(질문CRUD) ",
+      "피드페이지 퍼블리싱 및 조회·삭제 기능 구현",
+      "질문 등록 모달 퍼블리싱 및 기능 구현",
       "SNS공유기능",
       "404 페이지 디자인 및 퍼블리싱",
       "스켈레톤 UI 제작",
