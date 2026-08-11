@@ -8,6 +8,8 @@ import Callout from "@/components/Callout";
 import DocumentSection from "@/components/DocumentSection";
 import BulletList from "@/components/BulletList";
 
+import LinkIcon from "@/assets/icons/link-icon.svg";
+
 export default function ProjectDetailPage() {
   const navigate = useNavigate();
   const { projectId } = useParams();
@@ -72,7 +74,7 @@ export default function ProjectDetailPage() {
               <div className="flex gap-4">
                 <dt className="w-20 shrink-0 text-gray-400">담당 역할</dt>
                 <dd className="font-medium text-gray-700">
-                  {selectedProject.role.join(", ")}
+                  {selectedProject.role.join(" / ")}
                 </dd>
               </div>
             </dl>
@@ -111,8 +113,8 @@ export default function ProjectDetailPage() {
               <div className="space-y-14">
                 {selectedProject.detailRole.map((detail, index) => (
                   <article key={`${detail.role}-${index}`}>
-                    <h3 className="flex items-start gap-3 text-xl font-semibold text-gray-900">
-                      <span className="mt-0.5 font-mono text-sm font-medium text-gray-400">
+                    <h3 className="flex items-center gap-3 text-xl font-semibold text-gray-900">
+                      <span className="font-mono text-sm font-medium text-primary bg-primary/10 rounded-full px-2 py-1">
                         {String(index + 1).padStart(2, "0")}
                       </span>
 
@@ -146,9 +148,24 @@ export default function ProjectDetailPage() {
                       Troubleshooting {index + 1}
                     </p>
 
-                    <h3 className="mb-7 text-2xl font-bold tracking-tight text-gray-950">
-                      {trouble.title}
-                    </h3>
+                    <div className="w-full flex items-center justify-between">
+                      <h3 className="mb-7 text-2xl font-bold tracking-tight text-gray-950">
+                        {trouble.title}
+                      </h3>
+
+                      {trouble.prLink && (
+                        <a
+                          href={trouble.prLink}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          aria-label={`${trouble.title} PR 바로가기`}
+                          className="flex items-center gap-1 border border-gray-300 rounded-md px-2.5 py-1.5 text-sm text-gray-700 transition-colors hover:bg-gray-100 hover:text-gray-900"
+                        >
+                          <img src={LinkIcon} alt="" className="h-4 w-4" />
+                          Pull Requests
+                        </a>
+                      )}
+                    </div>
 
                     <div className="space-y-4">
                       <Callout

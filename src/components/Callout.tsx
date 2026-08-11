@@ -37,16 +37,16 @@ export default function Callout({
       </span>
 
       <div className="min-w-0 flex-1">
-        <h4 className="mb-2 text-sm font-bold text-gray-900">{label}</h4>
+        <h4 className="mb-2 text-base font-bold text-gray-900">{label}</h4>
 
-        <p className="text-[15px] leading-7 text-gray-700">{content}</p>
+        <p className="text-base leading-7 text-gray-700">{content}</p>
 
         {!!items.length && (
           <ul className="mt-3 space-y-2">
             {items.map((item, index) => (
               <li
                 key={`${item}-${index}`}
-                className="flex items-start gap-2 text-[15px] leading-7 text-gray-600"
+                className="flex items-start gap-2 text-base leading-7 text-gray-600"
               >
                 <span className="mt-[11px] h-1 w-1 shrink-0 rounded-full bg-gray-400" />
                 <span>{item}</span>

@@ -40,6 +40,7 @@ interface TroubleShooting {
   solution: string;
   solutionMore: string[];
   result: string;
+  prLink?: string;
 }
 
 export interface ProjectProps {
@@ -72,7 +73,7 @@ export const projects: ProjectProps[] = [
       "JavaScript",
       "Styled Components",
       "Axios",
-      "Swagger",
+      "Swagger UI",
       "Figma",
       "GitHub",
     ],
@@ -130,7 +131,7 @@ export const projects: ProjectProps[] = [
       "JavaScript",
       "Styled Components",
       "Axios",
-      "Swagger",
+      "Swagger UI",
       "Figma",
       "GitHub",
     ],
@@ -209,6 +210,7 @@ export const projects: ProjectProps[] = [
         ],
         result:
           "API 제약을 보완하여 서비스 정책에 맞는 리액션 기능을 구현하며 사용자가 시각적으로 확인할 수 있을 뿐 아니라 재미 요소를 더하며 사용자 경험을 향상 시켰습니다.",
+        prLink: "https://github.com/pho9902/open-mind-team3/pull/92",
       },
       {
         title: "연속 클릭 인터렉션 상태 관리",
@@ -222,6 +224,7 @@ export const projects: ProjectProps[] = [
         ],
         result:
           "짧은 시간에 콤보가 연속으로 발생하더라도 각 이펙트가 누락되지 않고 안정적으로 표시되도록 하여 연속 클릭 상황에서도 일관되게 출력되도록 하였습니다.",
+        prLink: "https://github.com/pho9902/open-mind-team3/pull/92",
       },
       {
         title: "피드 공유 시 접근 오류 해결",
@@ -235,6 +238,7 @@ export const projects: ProjectProps[] = [
         ],
         result:
           "답변자 페이지에서 공유하더라도 모든 사용자가 해당 피드에 정상적으로 접근할 수 있도록 개선하였습니다.",
+        prLink: "https://github.com/pho9902/open-mind-team3/pull/117",
       },
     ],
     learn: [
@@ -266,7 +270,7 @@ export const projects: ProjectProps[] = [
       "TypeScript",
       "CSS Module",
       "Axios",
-      "Swagger",
+      "Swagger UI",
       "Figma",
       "Linear",
       "GitHub",
@@ -346,6 +350,7 @@ export const projects: ProjectProps[] = [
         ],
         result:
           "이미 참여한 대시보드의 초대와 수락한 대시보드의 중복 초대가 다시 노출되지 않도록 개선하여, 동일 대시보드가 중복 생성되는 문제를 방지했습니다.",
+        prLink: "https://github.com/douk9909/DoingFarm/pull/49",
       },
       {
         title: "구성원 삭제 후 빈 페이지 노출 문제 해결",
@@ -359,6 +364,7 @@ export const projects: ProjectProps[] = [
         ],
         result:
           "삭제 후 빈 페이지가 노출되지 않도록 개선하여 사용자가 항상 유효한 목록을 확인할 수 있도록 했으며, 페이지 이동 흐름을 자연스럽게 개선하였습니다.",
+        prLink: "https://github.com/douk9909/DoingFarm/pull/30",
       },
     ],
     learn: [
@@ -390,7 +396,7 @@ export const projects: ProjectProps[] = [
       "Axios",
       "TanStack Query",
       "React Hook Form",
-      "Swagger",
+      "Swagger UI",
       "Figma",
       "Linear",
       "GitHub",
@@ -398,11 +404,10 @@ export const projects: ProjectProps[] = [
     role: [
       "UI 리디자인",
       "내 체험 조회 페이지 퍼블리싱 및 기능 구현",
-      "체험 등록 / 수정 / 삭제 페이지 퍼블리싱 및 기능 구현",
+      "체험 등록·수정·삭제 페이지 퍼블리싱 및 기능 구현",
       "FAQ 및 개인정보처리방침 페이지 퍼블리싱",
-      "공통 Layout 및 SideMenu 설계",
+      "공통 Layout 및 SideMenu·Toast 컴포넌트 설계",
       "SVG 아이콘 커스터마이징을 위한 SVGR 환경 구축",
-      "Toast 컴포넌트 구현",
       "무한 스크롤 및 폼 이탈 방직 기능 구현",
       "Lighthouse 기반 성능 개선",
     ],
@@ -485,6 +490,7 @@ export const projects: ProjectProps[] = [
         ],
         result:
           "기존 이미지 URL과 새로 추가한 File 이미지를 하나의 공통 컴포넌트에서 함께 표시하고 관리할 수 있게 되었습니다. 이를 통해 체험 등록·수정에서 동일한 컴포넌트를 재사용할 수 있었으며, 이미지 유지·추가·삭제 상태를 폼에서 명확하게 구분할 수 있는 구조로 개선했습니다.",
+        prLink: "https://github.com/Hanbh97/GlobalNomad/pull/150",
       },
       {
         title: "폼 모델과 API 모델 분리를 통한 데이터 불일치 해결",
@@ -500,6 +506,7 @@ export const projects: ProjectProps[] = [
         ],
         result:
           "조회 API, 폼 상태, 수정 API 간의 데이터 모델 불일치를 해결하여 기존 이미지와 일정이 수정 화면에 정상적으로 표시되도록 개선했습니다. 또한 실제 변경된 이미지와 일정만 수정 요청에 포함하도록 구현하여 불필요한 데이터 전송을 줄였으며, 데이터 변환과 UI 로직의 책임을 분리해 유지보수성을 향상시켰습니다.",
+        prLink: "https://github.com/Hanbh97/GlobalNomad/pull/150",
       },
     ],
     learn: [
@@ -570,9 +577,16 @@ export const projects: ProjectProps[] = [
       {
         role: "개발 환경 자동화",
         description: [
-          "GitHub Actions 기반 CI를 구축하여 ESLint, Type Check, Test, Build 자동화",
-          "Husky를 활용하여 Commit 전 코드 품질을 검증하는 개발 환경 구축",
+          "GitHub Actions로 ESLint·Prettier·TypeScript·Test·Build 등 5단계 CI 검증 환경 구축",
+          "Husky·lint-staged를 활용해 커밋 전 코드 포맷 및 린트 자동화",
           "AI 코드 리뷰(CodeRabbit)를 도입하여 Pull Request마다 코드 리뷰와 개선 사항을 자동으로 확인하고, 코드 품질과 리뷰 효율 향상",
+        ],
+      },
+      {
+        role: "AI 활용 테스트 코드 작성",
+        description: [
+          "Vitest와 React Testing Library 기반 테스트 코드 작성에 AI를 활용하여 테스트 케이스 도출 및 코드 작성 효율 향상",
+          "AI가 생성한 테스트 코드를 검토·수정하여 컴포넌트의 주요 동작과 예외 상황을 검증",
         ],
       },
       {
@@ -608,6 +622,7 @@ export const projects: ProjectProps[] = [
         ],
         result:
           "캐릭터의 외형과 스타일을 안정적으로 유지하면서도, 사용자 입력에 따라 다양한 상황과 감정을 자연스럽게 표현하는 이미지를 생성할 수 있었습니다.",
+        prLink: "https://github.com/JuHeonParkk/Aigo-mon/pull/22",
       },
     ],
     learn: [
